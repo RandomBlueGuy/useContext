@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Context } from "react";
+import "./Styles/styles.css";
+import Candidato from "./Components/Candidato";
+import GaleriaFiltros from "./Components/GaleriaFiltros";
+import TotalVotos from "./Components/TotalVotos";
+import DespliegueInfo from "./Components/DespliegueInfo";
+import { VotingProvider } from "./Store/VotingContext";
 
 function App() {
+  const candidatosArr = [
+    "candidato1",
+    "candidato2",
+    "candidato3",
+    "candidato4",
+  ];
+
+  //   const [votos, setVotos] = useState({
+  //     candidato1: 0,
+  //     candidato2: 0,
+  //     candidato3: 0,
+  //     candidato4: 0,
+  //   });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <VotingProvider>
+      <div className="stuff">
+        <main className="max-ctn">
+          <section className="candidates-ctn">
+            {candidatosArr.map((candidato) => {
+              return (
+                <Candidato
+                  name={candidato}
+                  key={Number(candidato[candidato.length - 1])}
+                />
+              );
+            })}
+          </section>
+          <section className="display-info">
+            <GaleriaFiltros />
+            <div className="votes-ctn">
+              <TotalVotos />
+              <DespliegueInfo />
+            </div>
+          </section>
+        </main>
+      </div>
+    </VotingProvider>
   );
 }
 
