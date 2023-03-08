@@ -1,5 +1,4 @@
 * {
-
   box-sizing: border-box; /* Opera/IE 8+ */
 }
 
@@ -60,7 +59,7 @@ h5 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(13, 38, 55);
+  background-color: rgba(13, 38, 55, 0.496);
   color: white;
   border-radius: 3rem;
   gap: 1.5rem;
@@ -130,12 +129,17 @@ h5 {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 1rem 0rem 0rem 1rem;
   box-shadow: 0 0px 20px rgba(0, 0, 0, 0.585);
   justify-content: space-evenly;
   padding: 1rem;
 }
 
+.exxxx{
+  width: 60%;
+}
 .vote-visualizer h1 {
   text-align: center;
 }

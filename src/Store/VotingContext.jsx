@@ -15,7 +15,6 @@ export const VotingProvider = ({ children }) => {
       let maxVotes = 0;
       let winnerV = "";
       for (const prop in this) {
-        console.log(prop)
         if (prop !== "global") {
           if (this[prop] > maxVotes) {
             maxVotes = this[prop];
@@ -25,7 +24,7 @@ export const VotingProvider = ({ children }) => {
           }
         }
       }
-      return winnerV
+      return winnerV;
     },
   });
 
