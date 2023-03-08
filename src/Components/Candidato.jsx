@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import "../Styles/styles.css";
-import candidateImg from "../assets/aaa.png";
 import { VotingContext } from "../Store/VotingContext";
 
 function Candidato(props) {
@@ -18,7 +17,8 @@ function Candidato(props) {
             : "rgba(111, 111, 200, 0.445)",
       }}
     >
-      <img src={candidateImg} alt="" />
+      <img src={require(`../assets/${props.name}.png`)} alt="" />
+      
       <div className="candidate-name">
         <button
           value={props.key}
